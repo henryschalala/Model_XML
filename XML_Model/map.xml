@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="CGImap 0.8.6 (1548621 spike-06.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <bounds minlat="49.8672000" minlon="8.6411000" maxlat="49.8762000" maxlon="8.6665000"/>
+ <node id="447856" visible="true" version="11" changeset="57791387" timestamp="2018-04-04T05:37:42Z" user="wegavision" uid="564585" lat="49.8714144" lon="8.6416322">
+  <tag k="TMC:cid_58:tabcd_1:Class" v="Point"/>
+  <tag k="TMC:cid_58:tabcd_1:Direction" v="positive"/>
+  <tag k="TMC:cid_58:tabcd_1:LCLversion" v="9.00"/>
+  <tag k="TMC:cid_58:tabcd_1:LocationCode" v="59783"/>
+  <tag k="TMC:cid_58:tabcd_1:NextLocationCode" v="36600"/>
+  <tag k="TMC:cid_58:tabcd_1:PrevLocationCode" v="59785"/>
+ </node>
+ <node id="447903" visible="true" version="15" changeset="22269893" timestamp="2014-05-11T12:37:46Z" user="greecemapper" uid="23785" lat="49.8684016" lon="8.6457822">
+  <tag k="TMC:cid_58:tabcd_1:Class" v="Point"/>
+  <tag k="TMC:cid_58:tabcd_1:Direction" v="negative"/>
+  <tag k="TMC:cid_58:tabcd_1:LCLversion" v="9.00"/>
+  <tag k="TMC:cid_58:tabcd_1:LocationCode" v="22727"/>
+  <tag k="TMC:cid_58:tabcd_1:NextLocationCode" v="36989"/>
+  <tag k="TMC:cid_58:tabcd_1:PrevLocationCode" v="37355"/>
+ </node>
+</osm>
