@@ -22,5 +22,7 @@ public interface ElementValidator {
 
 	boolean validateChildren(EList<Node> value);
 
+	boolean validateAttributes(EList<Attribute> value);
+
 	boolean validateAttribute(EList<Attribute> value);
 }

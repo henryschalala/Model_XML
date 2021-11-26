@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model_xml:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model_xml="http://www.example.org/model_xml" name="osm">
+  <children xsi:type="model_xml:Element" name="bounds" value="">
+    <attributes name="minlat" value="49.8672000"/>
+    <attributes name="minlon" value="8.6411000"/>
+    <attributes name="maxlat" value="49.8762000"/>
+    <attributes name="maxlon" value="8.6665000"/>
+  </children>
+  <children xsi:type="model_xml:Element" name="node" value="&#xA;  &#xA;  &#xA;  &#xA;  &#xA;  &#xA;  &#xA; ">
+    <children xsi:type="model_xml:Element" name="tag" value="">
+      <attributes name="k" value="TMC:cid_58:tabcd_1:Class"/>
+      <attributes name="v" value="Point"/>
+    </children>
+    <children xsi:type="model_xml:Element" name="tag" value="">
+      <attributes name="k" value="TMC:cid_58:tabcd_1:Direction"/>
+      <attributes name="v" value="positive"/>
+    </children>
+    <children xsi:type="model_xml:Element" name="tag" value="">
+      <attributes name="k" value="TMC:cid_58:tabcd_1:LCLversion"/>
+      <attributes name="v" value="9.00"/>
+    </children>
+    <children xsi:type="model_xml:Element" name="tag" value="">
+      <attributes name="k" value="TMC:cid_58:tabcd_1:LocationCode"/>
+      <attributes name="v" value="59783"/>
+    </children>
+    <children xsi:type="model_xml:Element" name="tag" value="">
+      <attributes name="k" value="TMC:cid_58:tabcd_1:NextLocationCode"/>
+      <attributes name="v" value="36600"/>
+    </children>
+    <children xsi:type="model_xml:Element" name="tag" value="">
+      <attributes name="k" value="TMC:cid_58:tabcd_1:PrevLocationCode"/>
+      <attributes name="v" value="59785"/>
+    </children>
+    <attributes name="id" value="447856"/>
+    <attributes name="visible" value="true"/>
+    <attributes name="version" value="11"/>
+    <attributes name="changeset" value="57791387"/>
+    <attributes name="timestamp" value="2018-04-04T05:37:42Z"/>
+    <attributes name="user" value="wegavision"/>
+    <attributes name="uid" value="564585"/>
+    <attributes name="lat" value="49.8714144"/>
+    <attributes name="lon" value="8.6416322"/>
+  </children>
+  <children xsi:type="model_xml:Element" name="node" value="&#xA;  &#xA;  &#xA;  &#xA;  &#xA;  &#xA;  &#xA; ">
+    <children xsi:type="model_xml:Element" name="tag" value="">
+      <attributes name="k" value="TMC:cid_58:tabcd_1:Class"/>
+      <attributes name="v" value="Point"/>
+    </children>
+    <children xsi:type="model_xml:Element" name="tag" value="">
+      <attributes name="k" value="TMC:cid_58:tabcd_1:Direction"/>
+      <attributes name="v" value="negative"/>
+    </children>
+    <children xsi:type="model_xml:Element" name="tag" value="">
+      <attributes name="k" value="TMC:cid_58:tabcd_1:LCLversion"/>
+      <attributes name="v" value="9.00"/>
+    </children>
+    <children xsi:type="model_xml:Element" name="tag" value="">
+      <attributes name="k" value="TMC:cid_58:tabcd_1:LocationCode"/>
+      <attributes name="v" value="22727"/>
+    </children>
+    <children xsi:type="model_xml:Element" name="tag" value="">
+      <attributes name="k" value="TMC:cid_58:tabcd_1:NextLocationCode"/>
+      <attributes name="v" value="36989"/>
+    </children>
+    <children xsi:type="model_xml:Element" name="tag" value="">
+      <attributes name="k" value="TMC:cid_58:tabcd_1:PrevLocationCode"/>
+      <attributes name="v" value="37355"/>
+    </children>
+    <attributes name="id" value="447903"/>
+    <attributes name="visible" value="true"/>
+    <attributes name="version" value="15"/>
+    <attributes name="changeset" value="22269893"/>
+    <attributes name="timestamp" value="2014-05-11T12:37:46Z"/>
+    <attributes name="user" value="greecemapper"/>
+    <attributes name="uid" value="23785"/>
+    <attributes name="lat" value="49.8684016"/>
+    <attributes name="lon" value="8.6457822"/>
+  </children>
+  <children xsi:type="model_xml:Element"/>
+  <attributes name="version" value="0.6"/>
+  <attributes name="generator" value="CGImap 0.8.6 (1548621 spike-06.openstreetmap.org)"/>
+  <attributes name="copyright" value="OpenStreetMap and contributors"/>
+  <attributes name="attribution" value="http://www.openstreetmap.org/copyright"/>
+  <attributes name="license" value="http://opendatacommons.org/licenses/odbl/1-0/"/>
+</model_xml:Root>

@@ -19,7 +19,7 @@ Package model_xml <http://www.example.org/model_xml>
   Class Element -> Node
     Attribute value : EString
     Reference children : Node<<0..*>>
-    Reference attribute : Attribute<<0..*>>
+    Reference attributes : Attribute<<0..*>>
 
   Class Text -> Node
 

@@ -205,13 +205,13 @@ public interface Model_xmlPackage extends EPackage {
 	int ELEMENT__CHILDREN = NODE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT__ATTRIBUTE = NODE_FEATURE_COUNT + 2;
+	int ELEMENT__ATTRIBUTES = NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Element</em>' class.
@@ -426,13 +426,13 @@ public interface Model_xmlPackage extends EPackage {
 	int ROOT__CHILDREN = ELEMENT__CHILDREN;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT__ATTRIBUTE = ELEMENT__ATTRIBUTE;
+	int ROOT__ATTRIBUTES = ELEMENT__ATTRIBUTES;
 
 	/**
 	 * The number of structural features of the '<em>Root</em>' class.
@@ -548,15 +548,15 @@ public interface Model_xmlPackage extends EPackage {
 	EReference getElement_Children();
 
 	/**
-	 * Returns the meta object for the reference list '{@link xml_model.model_xml.Element#getAttribute <em>Attribute</em>}'.
+	 * Returns the meta object for the containment reference list '{@link xml_model.model_xml.Element#getAttributes <em>Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Attribute</em>'.
-	 * @see xml_model.model_xml.Element#getAttribute()
+	 * @return the meta object for the containment reference list '<em>Attributes</em>'.
+	 * @see xml_model.model_xml.Element#getAttributes()
 	 * @see #getElement()
 	 * @generated
 	 */
-	EReference getElement_Attribute();
+	EReference getElement_Attributes();
 
 	/**
 	 * Returns the meta object for class '{@link xml_model.model_xml.Text <em>Text</em>}'.
@@ -723,12 +723,12 @@ public interface Model_xmlPackage extends EPackage {
 		EReference ELEMENT__CHILDREN = eINSTANCE.getElement_Children();
 
 		/**
-		 * The meta object literal for the '<em><b>Attribute</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ELEMENT__ATTRIBUTE = eINSTANCE.getElement_Attribute();
+		EReference ELEMENT__ATTRIBUTES = eINSTANCE.getElement_Attributes();
 
 		/**
 		 * The meta object literal for the '{@link xml_model.model_xml.impl.TextImpl <em>Text</em>}' class.

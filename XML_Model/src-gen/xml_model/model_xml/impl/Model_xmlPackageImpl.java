@@ -241,7 +241,7 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getElement_Attribute() {
+	public EReference getElement_Attributes() {
 		return (EReference) elementEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -340,7 +340,7 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 		elementEClass = createEClass(ELEMENT);
 		createEAttribute(elementEClass, ELEMENT__VALUE);
 		createEReference(elementEClass, ELEMENT__CHILDREN);
-		createEReference(elementEClass, ELEMENT__ATTRIBUTE);
+		createEReference(elementEClass, ELEMENT__ATTRIBUTES);
 
 		textEClass = createEClass(TEXT);
 
@@ -412,8 +412,8 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 		initEReference(getElement_Children(), this.getNode(), null, "children", null, 0, -1, Element.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getElement_Attribute(), this.getAttribute(), null, "attribute", null, 0, -1, Element.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+		initEReference(getElement_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Element.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

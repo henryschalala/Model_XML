@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import xml_model.model_xml.Attribute;
@@ -33,7 +32,7 @@ import xml_model.model_xml.Node;
  * <ul>
  *   <li>{@link xml_model.model_xml.impl.ElementImpl#getValue <em>Value</em>}</li>
  *   <li>{@link xml_model.model_xml.impl.ElementImpl#getChildren <em>Children</em>}</li>
- *   <li>{@link xml_model.model_xml.impl.ElementImpl#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link xml_model.model_xml.impl.ElementImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
  * @generated
@@ -70,14 +69,14 @@ public class ElementImpl extends NodeImpl implements Element {
 	protected EList<Node> children;
 
 	/**
-	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference list.
+	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAttribute()
+	 * @see #getAttributes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Attribute> attribute;
+	protected EList<Attribute> attributes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -136,12 +135,12 @@ public class ElementImpl extends NodeImpl implements Element {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Attribute> getAttribute() {
-		if (attribute == null) {
-			attribute = new EObjectResolvingEList<Attribute>(Attribute.class, this,
-					Model_xmlPackage.ELEMENT__ATTRIBUTE);
+	public EList<Attribute> getAttributes() {
+		if (attributes == null) {
+			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this,
+					Model_xmlPackage.ELEMENT__ATTRIBUTES);
 		}
-		return attribute;
+		return attributes;
 	}
 
 	/**
@@ -154,6 +153,8 @@ public class ElementImpl extends NodeImpl implements Element {
 		switch (featureID) {
 		case Model_xmlPackage.ELEMENT__CHILDREN:
 			return ((InternalEList<?>) getChildren()).basicRemove(otherEnd, msgs);
+		case Model_xmlPackage.ELEMENT__ATTRIBUTES:
+			return ((InternalEList<?>) getAttributes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -170,8 +171,8 @@ public class ElementImpl extends NodeImpl implements Element {
 			return getValue();
 		case Model_xmlPackage.ELEMENT__CHILDREN:
 			return getChildren();
-		case Model_xmlPackage.ELEMENT__ATTRIBUTE:
-			return getAttribute();
+		case Model_xmlPackage.ELEMENT__ATTRIBUTES:
+			return getAttributes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -192,9 +193,9 @@ public class ElementImpl extends NodeImpl implements Element {
 			getChildren().clear();
 			getChildren().addAll((Collection<? extends Node>) newValue);
 			return;
-		case Model_xmlPackage.ELEMENT__ATTRIBUTE:
-			getAttribute().clear();
-			getAttribute().addAll((Collection<? extends Attribute>) newValue);
+		case Model_xmlPackage.ELEMENT__ATTRIBUTES:
+			getAttributes().clear();
+			getAttributes().addAll((Collection<? extends Attribute>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -214,8 +215,8 @@ public class ElementImpl extends NodeImpl implements Element {
 		case Model_xmlPackage.ELEMENT__CHILDREN:
 			getChildren().clear();
 			return;
-		case Model_xmlPackage.ELEMENT__ATTRIBUTE:
-			getAttribute().clear();
+		case Model_xmlPackage.ELEMENT__ATTRIBUTES:
+			getAttributes().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -233,8 +234,8 @@ public class ElementImpl extends NodeImpl implements Element {
 			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		case Model_xmlPackage.ELEMENT__CHILDREN:
 			return children != null && !children.isEmpty();
-		case Model_xmlPackage.ELEMENT__ATTRIBUTE:
-			return attribute != null && !attribute.isEmpty();
+		case Model_xmlPackage.ELEMENT__ATTRIBUTES:
+			return attributes != null && !attributes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

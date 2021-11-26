@@ -21,7 +21,7 @@
     <genClasses ecoreClass="model_xml.ecore#//Element">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model_xml.ecore#//Element/value"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference model_xml.ecore#//Element/children"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model_xml.ecore#//Element/attributes"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference model_xml.ecore#//Element/attributes"/>
     </genClasses>
     <genClasses ecoreClass="model_xml.ecore#//Text"/>
     <genClasses ecoreClass="model_xml.ecore#//Comment"/>

@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link xml_model.model_xml.Element#getValue <em>Value</em>}</li>
  *   <li>{@link xml_model.model_xml.Element#getChildren <em>Children</em>}</li>
- *   <li>{@link xml_model.model_xml.Element#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link xml_model.model_xml.Element#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
  * @see xml_model.model_xml.Model_xmlPackage#getElement()
@@ -58,15 +58,15 @@ public interface Element extends Node {
 	EList<Node> getChildren();
 
 	/**
-	 * Returns the value of the '<em><b>Attribute</b></em>' reference list.
+	 * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
 	 * The list contents are of type {@link xml_model.model_xml.Attribute}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attribute</em>' reference list.
-	 * @see xml_model.model_xml.Model_xmlPackage#getElement_Attribute()
-	 * @model
+	 * @return the value of the '<em>Attributes</em>' containment reference list.
+	 * @see xml_model.model_xml.Model_xmlPackage#getElement_Attributes()
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Attribute> getAttribute();
+	EList<Attribute> getAttributes();
 
 } // Element

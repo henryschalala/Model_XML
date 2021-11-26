@@ -1,5 +1,11 @@
 import java.io.File;
 import java.io.IOException;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -35,8 +41,9 @@ public class Parser {
         
         final Element rootElement = document.getRootElement();
 //--------------------------------------------------------------------!!!!!!!!!!!!!!!!!!!!!!!!!-------------------------------------------------------------------------        
-//		ResourceSet rs = new ResourceSetImpl();
-//		Resource r = rs.createResource(URI.createFileURI("model.xmi"));
+		ResourceSet rs = new ResourceSetImpl();
+		rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
+		Resource r = rs.createResource(URI.createURI("mode.xmi"));
 
 
 	
@@ -48,21 +55,22 @@ public class Parser {
 		parseAttributes(rootElement, root);
 		parseChildren(rootElement, root);
 
-//		r.getContents().add(root);
+
 
 		            
 		xml_model.model_xml.Element e = Model_xmlFactory.eINSTANCE.createElement();
 		root.getChildren().add(e);
 
 		            
+		r.getContents().add(root);
+		try {
+		r.save(null);
+		} catch (IOException er) {
+		       // TODO Auto-generated catch block
+		       er.printStackTrace();
 
-//		try {
-//		r.save(null);
-//		} catch (IOException er) {
-//		       // TODO Auto-generated catch block
-//		       er.printStackTrace();
-//
-//		}
+		}
+		
 	}
 	/**
 	 * This Method parses the Attributes into the XML Meta model.
@@ -77,7 +85,7 @@ public class Parser {
 			a.setName(att.getName());
 			
 			a.setValue(att.getValue());
-			node.getAttribute().add(a);
+			node.getAttributes().add(a);
 		}
 		System.out.println();
 	}
