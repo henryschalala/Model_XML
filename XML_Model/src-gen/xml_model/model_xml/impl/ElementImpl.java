@@ -33,6 +33,7 @@ import xml_model.model_xml.Node;
  *   <li>{@link xml_model.model_xml.impl.ElementImpl#getValue <em>Value</em>}</li>
  *   <li>{@link xml_model.model_xml.impl.ElementImpl#getChildren <em>Children</em>}</li>
  *   <li>{@link xml_model.model_xml.impl.ElementImpl#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link xml_model.model_xml.impl.ElementImpl#isRoot <em>Root</em>}</li>
  * </ul>
  *
  * @generated
@@ -77,6 +78,26 @@ public class ElementImpl extends NodeImpl implements Element {
 	 * @ordered
 	 */
 	protected EList<Attribute> attributes;
+
+	/**
+	 * The default value of the '{@link #isRoot() <em>Root</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRoot()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ROOT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isRoot() <em>Root</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRoot()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean root = ROOT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,6 +169,27 @@ public class ElementImpl extends NodeImpl implements Element {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isRoot() {
+		return root;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRoot(boolean newRoot) {
+		boolean oldRoot = root;
+		root = newRoot;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Model_xmlPackage.ELEMENT__ROOT, oldRoot, root));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -173,6 +215,8 @@ public class ElementImpl extends NodeImpl implements Element {
 			return getChildren();
 		case Model_xmlPackage.ELEMENT__ATTRIBUTES:
 			return getAttributes();
+		case Model_xmlPackage.ELEMENT__ROOT:
+			return isRoot();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -197,6 +241,9 @@ public class ElementImpl extends NodeImpl implements Element {
 			getAttributes().clear();
 			getAttributes().addAll((Collection<? extends Attribute>) newValue);
 			return;
+		case Model_xmlPackage.ELEMENT__ROOT:
+			setRoot((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -218,6 +265,9 @@ public class ElementImpl extends NodeImpl implements Element {
 		case Model_xmlPackage.ELEMENT__ATTRIBUTES:
 			getAttributes().clear();
 			return;
+		case Model_xmlPackage.ELEMENT__ROOT:
+			setRoot(ROOT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -236,6 +286,8 @@ public class ElementImpl extends NodeImpl implements Element {
 			return children != null && !children.isEmpty();
 		case Model_xmlPackage.ELEMENT__ATTRIBUTES:
 			return attributes != null && !attributes.isEmpty();
+		case Model_xmlPackage.ELEMENT__ROOT:
+			return root != ROOT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -253,6 +305,8 @@ public class ElementImpl extends NodeImpl implements Element {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (value: ");
 		result.append(value);
+		result.append(", root: ");
+		result.append(root);
 		result.append(')');
 		return result.toString();
 	}

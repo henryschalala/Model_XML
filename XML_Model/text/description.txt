@@ -20,6 +20,7 @@ Package model_xml <http://www.example.org/model_xml>
     Attribute value : EString
     Reference children : Node<<0..*>>
     Reference attributes : Attribute<<0..*>>
+    Attribute root : EBoolean
 
   Class Text -> Node
 
@@ -29,5 +30,3 @@ Package model_xml <http://www.example.org/model_xml>
     Attribute value : EString
 
   Class CDataSection -> Text
-
-  Class Root -> Element

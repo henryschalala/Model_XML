@@ -22,6 +22,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model_xml.ecore#//Element/value"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference model_xml.ecore#//Element/children"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference model_xml.ecore#//Element/attributes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model_xml.ecore#//Element/root"/>
     </genClasses>
     <genClasses ecoreClass="model_xml.ecore#//Text"/>
     <genClasses ecoreClass="model_xml.ecore#//Comment"/>
@@ -29,6 +30,5 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model_xml.ecore#//Attribute/value"/>
     </genClasses>
     <genClasses ecoreClass="model_xml.ecore#//CDataSection"/>
-    <genClasses ecoreClass="model_xml.ecore#//Root"/>
   </genPackages>
 </genmodel:GenModel>

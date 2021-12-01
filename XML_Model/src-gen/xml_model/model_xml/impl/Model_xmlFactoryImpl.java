@@ -72,8 +72,6 @@ public class Model_xmlFactoryImpl extends EFactoryImpl implements Model_xmlFacto
 			return createAttribute();
 		case Model_xmlPackage.CDATA_SECTION:
 			return createCDataSection();
-		case Model_xmlPackage.ROOT:
-			return createRoot();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -157,16 +155,6 @@ public class Model_xmlFactoryImpl extends EFactoryImpl implements Model_xmlFacto
 	public CDataSection createCDataSection() {
 		CDataSectionImpl cDataSection = new CDataSectionImpl();
 		return cDataSection;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Root createRoot() {
-		RootImpl root = new RootImpl();
-		return root;
 	}
 
 	/**

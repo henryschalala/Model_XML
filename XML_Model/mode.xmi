@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<model_xml:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model_xml="http://www.example.org/model_xml" name="osm">
+<model_xml:Element xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model_xml="http://www.example.org/model_xml" name="osm" root="true">
   <children xsi:type="model_xml:Element" name="bounds" value="">
     <attributes name="minlat" value="49.8672000"/>
     <attributes name="minlon" value="8.6411000"/>
@@ -41,7 +41,7 @@
     <attributes name="lat" value="49.8714144"/>
     <attributes name="lon" value="8.6416322"/>
   </children>
-  <children xsi:type="model_xml:Element" name="node" value="&#xA;  &#xA;  &#xA;  &#xA;  &#xA;  &#xA;  &#xA; ">
+  <children xsi:type="model_xml:Element" name="node" value="&#xA;  &#xA;  &#xA;  &#xA;  &#xA;  &#xA;  &#xA;  Das ist ein Test&#xA; ">
     <children xsi:type="model_xml:Element" name="tag" value="">
       <attributes name="k" value="TMC:cid_58:tabcd_1:Class"/>
       <attributes name="v" value="Point"/>
@@ -66,6 +66,7 @@
       <attributes name="k" value="TMC:cid_58:tabcd_1:PrevLocationCode"/>
       <attributes name="v" value="37355"/>
     </children>
+    <children xsi:type="model_xml:Element" name="test" value="Das ist ein Test"/>
     <attributes name="id" value="447903"/>
     <attributes name="visible" value="true"/>
     <attributes name="version" value="15"/>
@@ -82,4 +83,4 @@
   <attributes name="copyright" value="OpenStreetMap and contributors"/>
   <attributes name="attribution" value="http://www.openstreetmap.org/copyright"/>
   <attributes name="license" value="http://opendatacommons.org/licenses/odbl/1-0/"/>
-</model_xml:Root>
+</model_xml:Element>

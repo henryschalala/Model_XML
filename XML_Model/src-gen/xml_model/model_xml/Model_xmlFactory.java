@@ -94,15 +94,6 @@ public interface Model_xmlFactory extends EFactory {
 	CDataSection createCDataSection();
 
 	/**
-	 * Returns a new object of class '<em>Root</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Root</em>'.
-	 * @generated
-	 */
-	Root createRoot();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

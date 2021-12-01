@@ -24,5 +24,7 @@ public interface ElementValidator {
 
 	boolean validateAttributes(EList<Attribute> value);
 
+	boolean validateRoot(boolean value);
+
 	boolean validateAttribute(EList<Attribute> value);
 }

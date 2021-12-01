@@ -15,6 +15,8 @@
         eType="#//Node" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="#//Attribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="root" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Text" eSuperTypes="#//Node"/>
   <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//Node"/>
@@ -22,5 +24,4 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CDataSection" eSuperTypes="#//Text"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Root" eSuperTypes="#//Element"/>
 </ecore:EPackage>

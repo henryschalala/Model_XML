@@ -16,7 +16,6 @@ import xml_model.model_xml.Element;
 import xml_model.model_xml.Model_xmlFactory;
 import xml_model.model_xml.Model_xmlPackage;
 import xml_model.model_xml.Node;
-import xml_model.model_xml.Root;
 import xml_model.model_xml.Text;
 import xml_model.model_xml.Version;
 import xml_model.model_xml.XML_Model;
@@ -83,13 +82,6 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 	 * @generated
 	 */
 	private EClass cDataSectionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass rootEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -250,6 +242,15 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getElement_Root() {
+		return (EAttribute) elementEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getText() {
 		return textEClass;
 	}
@@ -295,15 +296,6 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRoot() {
-		return rootEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Model_xmlFactory getModel_xmlFactory() {
 		return (Model_xmlFactory) getEFactoryInstance();
 	}
@@ -341,6 +333,7 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 		createEAttribute(elementEClass, ELEMENT__VALUE);
 		createEReference(elementEClass, ELEMENT__CHILDREN);
 		createEReference(elementEClass, ELEMENT__ATTRIBUTES);
+		createEAttribute(elementEClass, ELEMENT__ROOT);
 
 		textEClass = createEClass(TEXT);
 
@@ -350,8 +343,6 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 		createEAttribute(attributeEClass, ATTRIBUTE__VALUE);
 
 		cDataSectionEClass = createEClass(CDATA_SECTION);
-
-		rootEClass = createEClass(ROOT);
 	}
 
 	/**
@@ -388,7 +379,6 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 		commentEClass.getESuperTypes().add(this.getNode());
 		attributeEClass.getESuperTypes().add(this.getNode());
 		cDataSectionEClass.getESuperTypes().add(this.getText());
-		rootEClass.getESuperTypes().add(this.getElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(xmL_ModelEClass, XML_Model.class, "XML_Model", !IS_ABSTRACT, !IS_INTERFACE,
@@ -415,6 +405,8 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 		initEReference(getElement_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Element.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getElement_Root(), ecorePackage.getEBoolean(), "root", "false", 0, 1, Element.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -427,8 +419,6 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 
 		initEClass(cDataSectionEClass, CDataSection.class, "CDataSection", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(rootEClass, Root.class, "Root", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

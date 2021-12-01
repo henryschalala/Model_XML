@@ -134,17 +134,6 @@ public class Model_xmlSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case Model_xmlPackage.ROOT: {
-			Root root = (Root) theEObject;
-			T result = caseRoot(root);
-			if (result == null)
-				result = caseElement(root);
-			if (result == null)
-				result = caseNode(root);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -267,21 +256,6 @@ public class Model_xmlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCDataSection(CDataSection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Root</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Root</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRoot(Root object) {
 		return null;
 	}
 

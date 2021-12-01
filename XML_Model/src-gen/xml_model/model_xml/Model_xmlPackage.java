@@ -214,13 +214,22 @@ public interface Model_xmlPackage extends EPackage {
 	int ELEMENT__ATTRIBUTES = NODE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Root</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT__ROOT = NODE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_FEATURE_COUNT = NODE_FEATURE_COUNT + 3;
+	int ELEMENT_FEATURE_COUNT = NODE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Element</em>' class.
@@ -389,70 +398,6 @@ public interface Model_xmlPackage extends EPackage {
 	int CDATA_SECTION_OPERATION_COUNT = TEXT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link xml_model.model_xml.impl.RootImpl <em>Root</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see xml_model.model_xml.impl.RootImpl
-	 * @see xml_model.model_xml.impl.Model_xmlPackageImpl#getRoot()
-	 * @generated
-	 */
-	int ROOT = 8;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOT__NAME = ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOT__VALUE = ELEMENT__VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOT__CHILDREN = ELEMENT__CHILDREN;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOT__ATTRIBUTES = ELEMENT__ATTRIBUTES;
-
-	/**
-	 * The number of structural features of the '<em>Root</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Root</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOT_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * Returns the meta object for class '{@link xml_model.model_xml.XML_Model <em>XML Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -559,6 +504,17 @@ public interface Model_xmlPackage extends EPackage {
 	EReference getElement_Attributes();
 
 	/**
+	 * Returns the meta object for the attribute '{@link xml_model.model_xml.Element#isRoot <em>Root</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Root</em>'.
+	 * @see xml_model.model_xml.Element#isRoot()
+	 * @see #getElement()
+	 * @generated
+	 */
+	EAttribute getElement_Root();
+
+	/**
 	 * Returns the meta object for class '{@link xml_model.model_xml.Text <em>Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -608,16 +564,6 @@ public interface Model_xmlPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCDataSection();
-
-	/**
-	 * Returns the meta object for class '{@link xml_model.model_xml.Root <em>Root</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Root</em>'.
-	 * @see xml_model.model_xml.Root
-	 * @generated
-	 */
-	EClass getRoot();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -731,6 +677,14 @@ public interface Model_xmlPackage extends EPackage {
 		EReference ELEMENT__ATTRIBUTES = eINSTANCE.getElement_Attributes();
 
 		/**
+		 * The meta object literal for the '<em><b>Root</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ELEMENT__ROOT = eINSTANCE.getElement_Root();
+
+		/**
 		 * The meta object literal for the '{@link xml_model.model_xml.impl.TextImpl <em>Text</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -777,16 +731,6 @@ public interface Model_xmlPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CDATA_SECTION = eINSTANCE.getCDataSection();
-
-		/**
-		 * The meta object literal for the '{@link xml_model.model_xml.impl.RootImpl <em>Root</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see xml_model.model_xml.impl.RootImpl
-		 * @see xml_model.model_xml.impl.Model_xmlPackageImpl#getRoot()
-		 * @generated
-		 */
-		EClass ROOT = eINSTANCE.getRoot();
 
 	}
 

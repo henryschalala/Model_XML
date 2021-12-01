@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link xml_model.model_xml.Element#getValue <em>Value</em>}</li>
  *   <li>{@link xml_model.model_xml.Element#getChildren <em>Children</em>}</li>
  *   <li>{@link xml_model.model_xml.Element#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link xml_model.model_xml.Element#isRoot <em>Root</em>}</li>
  * </ul>
  *
  * @see xml_model.model_xml.Model_xmlPackage#getElement()
@@ -68,5 +69,28 @@ public interface Element extends Node {
 	 * @generated
 	 */
 	EList<Attribute> getAttributes();
+
+	/**
+	 * Returns the value of the '<em><b>Root</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Root</em>' attribute.
+	 * @see #setRoot(boolean)
+	 * @see xml_model.model_xml.Model_xmlPackage#getElement_Root()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isRoot();
+
+	/**
+	 * Sets the value of the '{@link xml_model.model_xml.Element#isRoot <em>Root</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Root</em>' attribute.
+	 * @see #isRoot()
+	 * @generated
+	 */
+	void setRoot(boolean value);
 
 } // Element

@@ -16,5 +16,6 @@
   <tag k="TMC:cid_58:tabcd_1:LocationCode" v="22727"/>
   <tag k="TMC:cid_58:tabcd_1:NextLocationCode" v="36989"/>
   <tag k="TMC:cid_58:tabcd_1:PrevLocationCode" v="37355"/>
+  <test>Das ist ein Test</test>
  </node>
 </osm>
