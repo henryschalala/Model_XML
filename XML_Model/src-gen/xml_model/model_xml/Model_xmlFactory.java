@@ -31,13 +31,13 @@ public interface Model_xmlFactory extends EFactory {
 	XML_Model createXML_Model();
 
 	/**
-	 * Returns a new object of class '<em>Version</em>'.
+	 * Returns a new object of class '<em>Header</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Version</em>'.
+	 * @return a new object of class '<em>Header</em>'.
 	 * @generated
 	 */
-	Version createVersion();
+	Header createHeader();
 
 	/**
 	 * Returns a new object of class '<em>Node</em>'.

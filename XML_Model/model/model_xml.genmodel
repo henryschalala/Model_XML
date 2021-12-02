@@ -13,8 +13,9 @@
     <genClasses ecoreClass="model_xml.ecore#//XML_Model">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference model_xml.ecore#//XML_Model/node"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model_xml.ecore#//XML_Model/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model_xml.ecore#//XML_Model/header"/>
     </genClasses>
-    <genClasses ecoreClass="model_xml.ecore#//Version"/>
+    <genClasses ecoreClass="model_xml.ecore#//Header"/>
     <genClasses ecoreClass="model_xml.ecore#//Node">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model_xml.ecore#//Node/name"/>
     </genClasses>

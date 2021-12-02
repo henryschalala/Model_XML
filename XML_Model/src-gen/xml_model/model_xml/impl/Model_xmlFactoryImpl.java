@@ -58,8 +58,8 @@ public class Model_xmlFactoryImpl extends EFactoryImpl implements Model_xmlFacto
 		switch (eClass.getClassifierID()) {
 		case Model_xmlPackage.XML_MODEL:
 			return createXML_Model();
-		case Model_xmlPackage.VERSION:
-			return createVersion();
+		case Model_xmlPackage.HEADER:
+			return createHeader();
 		case Model_xmlPackage.NODE:
 			return createNode();
 		case Model_xmlPackage.ELEMENT:
@@ -92,9 +92,9 @@ public class Model_xmlFactoryImpl extends EFactoryImpl implements Model_xmlFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Version createVersion() {
-		VersionImpl version = new VersionImpl();
-		return version;
+	public Header createHeader() {
+		HeaderImpl header = new HeaderImpl();
+		return header;
 	}
 
 	/**

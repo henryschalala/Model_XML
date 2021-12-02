@@ -13,11 +13,11 @@ import xml_model.model_xml.Attribute;
 import xml_model.model_xml.CDataSection;
 import xml_model.model_xml.Comment;
 import xml_model.model_xml.Element;
+import xml_model.model_xml.Header;
 import xml_model.model_xml.Model_xmlFactory;
 import xml_model.model_xml.Model_xmlPackage;
 import xml_model.model_xml.Node;
 import xml_model.model_xml.Text;
-import xml_model.model_xml.Version;
 import xml_model.model_xml.XML_Model;
 
 /**
@@ -39,7 +39,7 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass versionEClass = null;
+	private EClass headerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -179,8 +179,17 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getVersion() {
-		return versionEClass;
+	public EAttribute getXML_Model_Header() {
+		return (EAttribute) xmL_ModelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getHeader() {
+		return headerEClass;
 	}
 
 	/**
@@ -323,8 +332,9 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 		xmL_ModelEClass = createEClass(XML_MODEL);
 		createEReference(xmL_ModelEClass, XML_MODEL__NODE);
 		createEReference(xmL_ModelEClass, XML_MODEL__VERSION);
+		createEAttribute(xmL_ModelEClass, XML_MODEL__HEADER);
 
-		versionEClass = createEClass(VERSION);
+		headerEClass = createEClass(HEADER);
 
 		nodeEClass = createEClass(NODE);
 		createEAttribute(nodeEClass, NODE__NAME);
@@ -386,11 +396,13 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 		initEReference(getXML_Model_Node(), this.getNode(), null, "node", null, 0, 1, XML_Model.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getXML_Model_Version(), this.getVersion(), null, "version", null, 0, 1, XML_Model.class,
+		initEReference(getXML_Model_Version(), this.getHeader(), null, "version", null, 0, 1, XML_Model.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getXML_Model_Header(), ecorePackage.getEString(), "header", null, 0, 1, XML_Model.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(versionEClass, Version.class, "Version", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(headerEClass, Header.class, "Header", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNode_Name(), ecorePackage.getEString(), "name", null, 0, 1, Node.class, !IS_TRANSIENT,

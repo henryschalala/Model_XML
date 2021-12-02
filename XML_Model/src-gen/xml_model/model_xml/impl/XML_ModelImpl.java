@@ -11,9 +11,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import xml_model.model_xml.Header;
 import xml_model.model_xml.Model_xmlPackage;
 import xml_model.model_xml.Node;
-import xml_model.model_xml.Version;
 import xml_model.model_xml.XML_Model;
 
 /**
@@ -26,6 +26,7 @@ import xml_model.model_xml.XML_Model;
  * <ul>
  *   <li>{@link xml_model.model_xml.impl.XML_ModelImpl#getNode <em>Node</em>}</li>
  *   <li>{@link xml_model.model_xml.impl.XML_ModelImpl#getVersion <em>Version</em>}</li>
+ *   <li>{@link xml_model.model_xml.impl.XML_ModelImpl#getHeader <em>Header</em>}</li>
  * </ul>
  *
  * @generated
@@ -49,7 +50,27 @@ public class XML_ModelImpl extends MinimalEObjectImpl.Container implements XML_M
 	 * @generated
 	 * @ordered
 	 */
-	protected Version version;
+	protected Header version;
+
+	/**
+	 * The default value of the '{@link #getHeader() <em>Header</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHeader()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HEADER_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getHeader() <em>Header</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHeader()
+	 * @generated
+	 * @ordered
+	 */
+	protected String header = HEADER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,10 +145,10 @@ public class XML_ModelImpl extends MinimalEObjectImpl.Container implements XML_M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Version getVersion() {
+	public Header getVersion() {
 		if (version != null && version.eIsProxy()) {
 			InternalEObject oldVersion = (InternalEObject) version;
-			version = (Version) eResolveProxy(oldVersion);
+			version = (Header) eResolveProxy(oldVersion);
 			if (version != oldVersion) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Model_xmlPackage.XML_MODEL__VERSION,
@@ -142,7 +163,7 @@ public class XML_ModelImpl extends MinimalEObjectImpl.Container implements XML_M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Version basicGetVersion() {
+	public Header basicGetVersion() {
 		return version;
 	}
 
@@ -151,12 +172,34 @@ public class XML_ModelImpl extends MinimalEObjectImpl.Container implements XML_M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setVersion(Version newVersion) {
-		Version oldVersion = version;
+	public void setVersion(Header newVersion) {
+		Header oldVersion = version;
 		version = newVersion;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Model_xmlPackage.XML_MODEL__VERSION, oldVersion,
 					version));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getHeader() {
+		return header;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHeader(String newHeader) {
+		String oldHeader = header;
+		header = newHeader;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Model_xmlPackage.XML_MODEL__HEADER, oldHeader,
+					header));
 	}
 
 	/**
@@ -187,6 +230,8 @@ public class XML_ModelImpl extends MinimalEObjectImpl.Container implements XML_M
 			if (resolve)
 				return getVersion();
 			return basicGetVersion();
+		case Model_xmlPackage.XML_MODEL__HEADER:
+			return getHeader();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -203,7 +248,10 @@ public class XML_ModelImpl extends MinimalEObjectImpl.Container implements XML_M
 			setNode((Node) newValue);
 			return;
 		case Model_xmlPackage.XML_MODEL__VERSION:
-			setVersion((Version) newValue);
+			setVersion((Header) newValue);
+			return;
+		case Model_xmlPackage.XML_MODEL__HEADER:
+			setHeader((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -221,7 +269,10 @@ public class XML_ModelImpl extends MinimalEObjectImpl.Container implements XML_M
 			setNode((Node) null);
 			return;
 		case Model_xmlPackage.XML_MODEL__VERSION:
-			setVersion((Version) null);
+			setVersion((Header) null);
+			return;
+		case Model_xmlPackage.XML_MODEL__HEADER:
+			setHeader(HEADER_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -239,8 +290,27 @@ public class XML_ModelImpl extends MinimalEObjectImpl.Container implements XML_M
 			return node != null;
 		case Model_xmlPackage.XML_MODEL__VERSION:
 			return version != null;
+		case Model_xmlPackage.XML_MODEL__HEADER:
+			return HEADER_EDEFAULT == null ? header != null : !HEADER_EDEFAULT.equals(header);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (header: ");
+		result.append(header);
+		result.append(')');
+		return result.toString();
 	}
 
 } //XML_ModelImpl

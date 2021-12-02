@@ -85,13 +85,22 @@ public interface Model_xmlPackage extends EPackage {
 	int XML_MODEL__VERSION = 1;
 
 	/**
+	 * The feature id for the '<em><b>Header</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int XML_MODEL__HEADER = 2;
+
+	/**
 	 * The number of structural features of the '<em>XML Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int XML_MODEL_FEATURE_COUNT = 2;
+	int XML_MODEL_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>XML Model</em>' class.
@@ -103,32 +112,32 @@ public interface Model_xmlPackage extends EPackage {
 	int XML_MODEL_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link xml_model.model_xml.impl.VersionImpl <em>Version</em>}' class.
+	 * The meta object id for the '{@link xml_model.model_xml.impl.HeaderImpl <em>Header</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see xml_model.model_xml.impl.VersionImpl
-	 * @see xml_model.model_xml.impl.Model_xmlPackageImpl#getVersion()
+	 * @see xml_model.model_xml.impl.HeaderImpl
+	 * @see xml_model.model_xml.impl.Model_xmlPackageImpl#getHeader()
 	 * @generated
 	 */
-	int VERSION = 1;
+	int HEADER = 1;
 
 	/**
-	 * The number of structural features of the '<em>Version</em>' class.
+	 * The number of structural features of the '<em>Header</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERSION_FEATURE_COUNT = 0;
+	int HEADER_FEATURE_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>Version</em>' class.
+	 * The number of operations of the '<em>Header</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERSION_OPERATION_COUNT = 0;
+	int HEADER_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link xml_model.model_xml.impl.NodeImpl <em>Node</em>}' class.
@@ -430,14 +439,25 @@ public interface Model_xmlPackage extends EPackage {
 	EReference getXML_Model_Version();
 
 	/**
-	 * Returns the meta object for class '{@link xml_model.model_xml.Version <em>Version</em>}'.
+	 * Returns the meta object for the attribute '{@link xml_model.model_xml.XML_Model#getHeader <em>Header</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Version</em>'.
-	 * @see xml_model.model_xml.Version
+	 * @return the meta object for the attribute '<em>Header</em>'.
+	 * @see xml_model.model_xml.XML_Model#getHeader()
+	 * @see #getXML_Model()
 	 * @generated
 	 */
-	EClass getVersion();
+	EAttribute getXML_Model_Header();
+
+	/**
+	 * Returns the meta object for class '{@link xml_model.model_xml.Header <em>Header</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Header</em>'.
+	 * @see xml_model.model_xml.Header
+	 * @generated
+	 */
+	EClass getHeader();
 
 	/**
 	 * Returns the meta object for class '{@link xml_model.model_xml.Node <em>Node</em>}'.
@@ -615,14 +635,22 @@ public interface Model_xmlPackage extends EPackage {
 		EReference XML_MODEL__VERSION = eINSTANCE.getXML_Model_Version();
 
 		/**
-		 * The meta object literal for the '{@link xml_model.model_xml.impl.VersionImpl <em>Version</em>}' class.
+		 * The meta object literal for the '<em><b>Header</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see xml_model.model_xml.impl.VersionImpl
-		 * @see xml_model.model_xml.impl.Model_xmlPackageImpl#getVersion()
 		 * @generated
 		 */
-		EClass VERSION = eINSTANCE.getVersion();
+		EAttribute XML_MODEL__HEADER = eINSTANCE.getXML_Model_Header();
+
+		/**
+		 * The meta object literal for the '{@link xml_model.model_xml.impl.HeaderImpl <em>Header</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see xml_model.model_xml.impl.HeaderImpl
+		 * @see xml_model.model_xml.impl.Model_xmlPackageImpl#getHeader()
+		 * @generated
+		 */
+		EClass HEADER = eINSTANCE.getHeader();
 
 		/**
 		 * The meta object literal for the '{@link xml_model.model_xml.impl.NodeImpl <em>Node</em>}' class.

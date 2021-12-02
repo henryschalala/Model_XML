@@ -1,10 +1,14 @@
 package Parser;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import org.apache.commons.io.FileUtils;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -20,20 +24,15 @@ import xml_model.model_xml.Model_xmlFactory;
 
 
 public class Parser {
-
+	
 	public static void main(String[] args) {
 
 		SAXBuilder saxBuilder = new SAXBuilder();
 
 		Document document = null;
-//		try {
-//			document = saxBuilder.build(System.in);
-//		} catch (JDOMException | IOException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		}
-		File myObj = new File("map.xml");
 
+		File myObj = new File("sample_CustomersOrders.xml");
+		
 		try {
 			document = saxBuilder.build(myObj);
 		} catch (JDOMException | IOException e1) {
@@ -46,10 +45,23 @@ public class Parser {
 		ResourceSet rs = new ResourceSetImpl();
 		rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 		Resource r = rs.createResource(URI.createURI("mode.xmi"));
-
+		
 		// ---- parse xml
-
+		xml_model.model_xml.XML_Model container = Model_xmlFactory.eINSTANCE.createXML_Model();
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(myObj));
+			container.setHeader(br.readLine());
+			br.close();
+		} catch (FileNotFoundException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		xml_model.model_xml.Element root = Model_xmlFactory.eINSTANCE.createElement();
+		container.setNode(root);
+		container.setVersion(null);
 		root.setRoot(true);
 		root.setName(rootElement.getName());
 		parseAttributes(rootElement, root);
@@ -66,16 +78,28 @@ public class Parser {
 			er.printStackTrace();
 
 		}
-		FileWriter file = null;
+		createXMLFile(container, root);
+		File result = new File("test.xml");
 		try {
-			file = new FileWriter("test.xml");
+			boolean bool = FileUtils.contentEquals(myObj, result);
+			assert(bool==true);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		BufferedWriter buffer = new BufferedWriter(file);
-		String str = printModel(root, 0);
-		System.out.print(str);
+	}
+
+	private static void createXMLFile(xml_model.model_xml.XML_Model container, xml_model.model_xml.Element root) {
+		try {
+			FileWriter file = new FileWriter("test.xml");
+			BufferedWriter buffer = new BufferedWriter(file);
+			String str = container.getHeader() + "\n" + printModel(root, 0);
+			buffer.write(str);
+			buffer.close();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 	}
 
 	private static String printModel(xml_model.model_xml.Element element, int count) {

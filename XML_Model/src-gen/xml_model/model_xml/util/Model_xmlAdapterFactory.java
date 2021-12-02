@@ -72,8 +72,8 @@ public class Model_xmlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseVersion(Version object) {
-			return createVersionAdapter();
+		public Adapter caseHeader(Header object) {
+			return createHeaderAdapter();
 		}
 
 		@Override
@@ -140,16 +140,16 @@ public class Model_xmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link xml_model.model_xml.Version <em>Version</em>}'.
+	 * Creates a new adapter for an object of class '{@link xml_model.model_xml.Header <em>Header</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see xml_model.model_xml.Version
+	 * @see xml_model.model_xml.Header
 	 * @generated
 	 */
-	public Adapter createVersionAdapter() {
+	public Adapter createHeaderAdapter() {
 		return null;
 	}
 

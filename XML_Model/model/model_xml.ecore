@@ -3,9 +3,10 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model_xml" nsURI="http://www.example.org/model_xml" nsPrefix="model_xml">
   <eClassifiers xsi:type="ecore:EClass" name="XML_Model">
     <eStructuralFeatures xsi:type="ecore:EReference" name="node" eType="#//Node" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="version" eType="#//Version"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="version" eType="#//Header"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Version"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Header"/>
   <eClassifiers xsi:type="ecore:EClass" name="Node">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

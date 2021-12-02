@@ -9,9 +9,10 @@ Package model_xml <http://www.example.org/model_xml>
 
   Class XML_Model
     Reference node : Node
-    Reference version : Version
+    Reference version : Header
+    Attribute header : EString
 
-  Class Version
+  Class Header
 
   Class Node
     Attribute name : EString
