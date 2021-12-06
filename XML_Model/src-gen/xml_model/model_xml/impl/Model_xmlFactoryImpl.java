@@ -58,20 +58,16 @@ public class Model_xmlFactoryImpl extends EFactoryImpl implements Model_xmlFacto
 		switch (eClass.getClassifierID()) {
 		case Model_xmlPackage.XML_MODEL:
 			return createXML_Model();
-		case Model_xmlPackage.HEADER:
-			return createHeader();
 		case Model_xmlPackage.NODE:
 			return createNode();
 		case Model_xmlPackage.ELEMENT:
 			return createElement();
-		case Model_xmlPackage.TEXT:
-			return createText();
 		case Model_xmlPackage.COMMENT:
 			return createComment();
 		case Model_xmlPackage.ATTRIBUTE:
 			return createAttribute();
-		case Model_xmlPackage.CDATA_SECTION:
-			return createCDataSection();
+		case Model_xmlPackage.VALUE:
+			return createValue();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -85,16 +81,6 @@ public class Model_xmlFactoryImpl extends EFactoryImpl implements Model_xmlFacto
 	public XML_Model createXML_Model() {
 		XML_ModelImpl xmL_Model = new XML_ModelImpl();
 		return xmL_Model;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Header createHeader() {
-		HeaderImpl header = new HeaderImpl();
-		return header;
 	}
 
 	/**
@@ -122,16 +108,6 @@ public class Model_xmlFactoryImpl extends EFactoryImpl implements Model_xmlFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Text createText() {
-		TextImpl text = new TextImpl();
-		return text;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Comment createComment() {
 		CommentImpl comment = new CommentImpl();
 		return comment;
@@ -152,9 +128,9 @@ public class Model_xmlFactoryImpl extends EFactoryImpl implements Model_xmlFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CDataSection createCDataSection() {
-		CDataSectionImpl cDataSection = new CDataSectionImpl();
-		return cDataSection;
+	public Value createValue() {
+		ValueImpl value = new ValueImpl();
+		return value;
 	}
 
 	/**

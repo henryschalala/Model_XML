@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import xml_model.model_xml.Header;
 import xml_model.model_xml.Model_xmlPackage;
 import xml_model.model_xml.Node;
 import xml_model.model_xml.XML_Model;
@@ -24,8 +23,7 @@ import xml_model.model_xml.XML_Model;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link xml_model.model_xml.impl.XML_ModelImpl#getNode <em>Node</em>}</li>
- *   <li>{@link xml_model.model_xml.impl.XML_ModelImpl#getVersion <em>Version</em>}</li>
+ *   <li>{@link xml_model.model_xml.impl.XML_ModelImpl#getRoot <em>Root</em>}</li>
  *   <li>{@link xml_model.model_xml.impl.XML_ModelImpl#getHeader <em>Header</em>}</li>
  * </ul>
  *
@@ -33,24 +31,14 @@ import xml_model.model_xml.XML_Model;
  */
 public class XML_ModelImpl extends MinimalEObjectImpl.Container implements XML_Model {
 	/**
-	 * The cached value of the '{@link #getNode() <em>Node</em>}' containment reference.
+	 * The cached value of the '{@link #getRoot() <em>Root</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNode()
+	 * @see #getRoot()
 	 * @generated
 	 * @ordered
 	 */
-	protected Node node;
-
-	/**
-	 * The cached value of the '{@link #getVersion() <em>Version</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVersion()
-	 * @generated
-	 * @ordered
-	 */
-	protected Header version;
+	protected Node root;
 
 	/**
 	 * The default value of the '{@link #getHeader() <em>Header</em>}' attribute.
@@ -96,8 +84,8 @@ public class XML_ModelImpl extends MinimalEObjectImpl.Container implements XML_M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Node getNode() {
-		return node;
+	public Node getRoot() {
+		return root;
 	}
 
 	/**
@@ -105,12 +93,12 @@ public class XML_ModelImpl extends MinimalEObjectImpl.Container implements XML_M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetNode(Node newNode, NotificationChain msgs) {
-		Node oldNode = node;
-		node = newNode;
+	public NotificationChain basicSetRoot(Node newRoot, NotificationChain msgs) {
+		Node oldRoot = root;
+		root = newRoot;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Model_xmlPackage.XML_MODEL__NODE, oldNode, newNode);
+					Model_xmlPackage.XML_MODEL__ROOT, oldRoot, newRoot);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -124,60 +112,20 @@ public class XML_ModelImpl extends MinimalEObjectImpl.Container implements XML_M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNode(Node newNode) {
-		if (newNode != node) {
+	public void setRoot(Node newRoot) {
+		if (newRoot != root) {
 			NotificationChain msgs = null;
-			if (node != null)
-				msgs = ((InternalEObject) node).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - Model_xmlPackage.XML_MODEL__NODE, null, msgs);
-			if (newNode != null)
-				msgs = ((InternalEObject) newNode).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - Model_xmlPackage.XML_MODEL__NODE, null, msgs);
-			msgs = basicSetNode(newNode, msgs);
+			if (root != null)
+				msgs = ((InternalEObject) root).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - Model_xmlPackage.XML_MODEL__ROOT, null, msgs);
+			if (newRoot != null)
+				msgs = ((InternalEObject) newRoot).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - Model_xmlPackage.XML_MODEL__ROOT, null, msgs);
+			msgs = basicSetRoot(newRoot, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Model_xmlPackage.XML_MODEL__NODE, newNode, newNode));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Header getVersion() {
-		if (version != null && version.eIsProxy()) {
-			InternalEObject oldVersion = (InternalEObject) version;
-			version = (Header) eResolveProxy(oldVersion);
-			if (version != oldVersion) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Model_xmlPackage.XML_MODEL__VERSION,
-							oldVersion, version));
-			}
-		}
-		return version;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Header basicGetVersion() {
-		return version;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setVersion(Header newVersion) {
-		Header oldVersion = version;
-		version = newVersion;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Model_xmlPackage.XML_MODEL__VERSION, oldVersion,
-					version));
+			eNotify(new ENotificationImpl(this, Notification.SET, Model_xmlPackage.XML_MODEL__ROOT, newRoot, newRoot));
 	}
 
 	/**
@@ -210,8 +158,8 @@ public class XML_ModelImpl extends MinimalEObjectImpl.Container implements XML_M
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Model_xmlPackage.XML_MODEL__NODE:
-			return basicSetNode(null, msgs);
+		case Model_xmlPackage.XML_MODEL__ROOT:
+			return basicSetRoot(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -224,12 +172,8 @@ public class XML_ModelImpl extends MinimalEObjectImpl.Container implements XML_M
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Model_xmlPackage.XML_MODEL__NODE:
-			return getNode();
-		case Model_xmlPackage.XML_MODEL__VERSION:
-			if (resolve)
-				return getVersion();
-			return basicGetVersion();
+		case Model_xmlPackage.XML_MODEL__ROOT:
+			return getRoot();
 		case Model_xmlPackage.XML_MODEL__HEADER:
 			return getHeader();
 		}
@@ -244,11 +188,8 @@ public class XML_ModelImpl extends MinimalEObjectImpl.Container implements XML_M
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Model_xmlPackage.XML_MODEL__NODE:
-			setNode((Node) newValue);
-			return;
-		case Model_xmlPackage.XML_MODEL__VERSION:
-			setVersion((Header) newValue);
+		case Model_xmlPackage.XML_MODEL__ROOT:
+			setRoot((Node) newValue);
 			return;
 		case Model_xmlPackage.XML_MODEL__HEADER:
 			setHeader((String) newValue);
@@ -265,11 +206,8 @@ public class XML_ModelImpl extends MinimalEObjectImpl.Container implements XML_M
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Model_xmlPackage.XML_MODEL__NODE:
-			setNode((Node) null);
-			return;
-		case Model_xmlPackage.XML_MODEL__VERSION:
-			setVersion((Header) null);
+		case Model_xmlPackage.XML_MODEL__ROOT:
+			setRoot((Node) null);
 			return;
 		case Model_xmlPackage.XML_MODEL__HEADER:
 			setHeader(HEADER_EDEFAULT);
@@ -286,10 +224,8 @@ public class XML_ModelImpl extends MinimalEObjectImpl.Container implements XML_M
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Model_xmlPackage.XML_MODEL__NODE:
-			return node != null;
-		case Model_xmlPackage.XML_MODEL__VERSION:
-			return version != null;
+		case Model_xmlPackage.XML_MODEL__ROOT:
+			return root != null;
 		case Model_xmlPackage.XML_MODEL__HEADER:
 			return HEADER_EDEFAULT == null ? header != null : !HEADER_EDEFAULT.equals(header);
 		}

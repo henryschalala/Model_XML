@@ -8,26 +8,22 @@ This can be disabled with -vmargs -Dorg.eclipse.emf.examples.generator.validator
 Package model_xml <http://www.example.org/model_xml>
 
   Class XML_Model
-    Reference node : Node
-    Reference version : Header
+    Reference root : Node
     Attribute header : EString
 
-  Class Header
+  Class Node -> Element
+    Reference children : Node<<0..*>>
+    Reference crossref : Node<<0..*>>
+    Reference attributes : Attribute<<0..*>>
+    Reference value : Value
 
-  Class Node
+  Class Element
     Attribute name : EString
 
-  Class Element -> Node
-    Attribute value : EString
-    Reference children : Node<<0..*>>
-    Reference attributes : Attribute<<0..*>>
-    Attribute root : EBoolean
+  Class Comment
 
-  Class Text -> Node
-
-  Class Comment -> Node
-
-  Class Attribute -> Node
+  Class Attribute -> Element
     Attribute value : EString
 
-  Class CDataSection -> Text
+  Class Value
+    Attribute payload : EString

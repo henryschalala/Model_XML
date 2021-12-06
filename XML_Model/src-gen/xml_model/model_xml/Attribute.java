@@ -18,7 +18,7 @@ package xml_model.model_xml;
  * @model
  * @generated
  */
-public interface Attribute extends Node {
+public interface Attribute extends Element {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->

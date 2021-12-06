@@ -24,7 +24,7 @@ import xml_model.model_xml.Model_xmlPackage;
  *
  * @generated
  */
-public class AttributeImpl extends NodeImpl implements Attribute {
+public class AttributeImpl extends ElementImpl implements Attribute {
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->

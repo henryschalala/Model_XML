@@ -4,6 +4,8 @@ package xml_model.model_xml.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import xml_model.model_xml.Comment;
 import xml_model.model_xml.Model_xmlPackage;
 
@@ -14,7 +16,7 @@ import xml_model.model_xml.Model_xmlPackage;
  *
  * @generated
  */
-public class CommentImpl extends NodeImpl implements Comment {
+public class CommentImpl extends MinimalEObjectImpl.Container implements Comment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

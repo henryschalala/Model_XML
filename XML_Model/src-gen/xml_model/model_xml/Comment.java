@@ -2,6 +2,8 @@
  */
 package xml_model.model_xml;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Comment</b></em>'.
@@ -12,5 +14,5 @@ package xml_model.model_xml;
  * @model
  * @generated
  */
-public interface Comment extends Node {
+public interface Comment extends EObject {
 } // Comment

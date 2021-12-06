@@ -67,22 +67,13 @@ public interface Model_xmlPackage extends EPackage {
 	int XML_MODEL = 0;
 
 	/**
-	 * The feature id for the '<em><b>Node</b></em>' containment reference.
+	 * The feature id for the '<em><b>Root</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int XML_MODEL__NODE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Version</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int XML_MODEL__VERSION = 1;
+	int XML_MODEL__ROOT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -91,7 +82,7 @@ public interface Model_xmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int XML_MODEL__HEADER = 2;
+	int XML_MODEL__HEADER = 1;
 
 	/**
 	 * The number of structural features of the '<em>XML Model</em>' class.
@@ -100,7 +91,7 @@ public interface Model_xmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int XML_MODEL_FEATURE_COUNT = 3;
+	int XML_MODEL_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>XML Model</em>' class.
@@ -112,32 +103,41 @@ public interface Model_xmlPackage extends EPackage {
 	int XML_MODEL_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link xml_model.model_xml.impl.HeaderImpl <em>Header</em>}' class.
+	 * The meta object id for the '{@link xml_model.model_xml.impl.ElementImpl <em>Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see xml_model.model_xml.impl.HeaderImpl
-	 * @see xml_model.model_xml.impl.Model_xmlPackageImpl#getHeader()
+	 * @see xml_model.model_xml.impl.ElementImpl
+	 * @see xml_model.model_xml.impl.Model_xmlPackageImpl#getElement()
 	 * @generated
 	 */
-	int HEADER = 1;
+	int ELEMENT = 2;
 
 	/**
-	 * The number of structural features of the '<em>Header</em>' class.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HEADER_FEATURE_COUNT = 0;
+	int ELEMENT__NAME = 0;
 
 	/**
-	 * The number of operations of the '<em>Header</em>' class.
+	 * The number of structural features of the '<em>Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HEADER_OPERATION_COUNT = 0;
+	int ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link xml_model.model_xml.impl.NodeImpl <em>Node</em>}' class.
@@ -147,7 +147,7 @@ public interface Model_xmlPackage extends EPackage {
 	 * @see xml_model.model_xml.impl.Model_xmlPackageImpl#getNode()
 	 * @generated
 	 */
-	int NODE = 2;
+	int NODE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -156,53 +156,7 @@ public interface Model_xmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__NAME = 0;
-
-	/**
-	 * The number of structural features of the '<em>Node</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NODE_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Node</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NODE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link xml_model.model_xml.impl.ElementImpl <em>Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see xml_model.model_xml.impl.ElementImpl
-	 * @see xml_model.model_xml.impl.Model_xmlPackageImpl#getElement()
-	 * @generated
-	 */
-	int ELEMENT = 3;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELEMENT__NAME = NODE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELEMENT__VALUE = NODE_FEATURE_COUNT + 0;
+	int NODE__NAME = ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -211,7 +165,16 @@ public interface Model_xmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT__CHILDREN = NODE_FEATURE_COUNT + 1;
+	int NODE__CHILDREN = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Crossref</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE__CROSSREF = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -220,71 +183,34 @@ public interface Model_xmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT__ATTRIBUTES = NODE_FEATURE_COUNT + 2;
+	int NODE__ATTRIBUTES = ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Root</b></em>' attribute.
+	 * The feature id for the '<em><b>Value</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT__ROOT = NODE_FEATURE_COUNT + 3;
+	int NODE__VALUE = ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of structural features of the '<em>Element</em>' class.
+	 * The number of structural features of the '<em>Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_FEATURE_COUNT = NODE_FEATURE_COUNT + 4;
+	int NODE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The number of operations of the '<em>Element</em>' class.
+	 * The number of operations of the '<em>Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link xml_model.model_xml.impl.TextImpl <em>Text</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see xml_model.model_xml.impl.TextImpl
-	 * @see xml_model.model_xml.impl.Model_xmlPackageImpl#getText()
-	 * @generated
-	 */
-	int TEXT = 4;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT__NAME = NODE__NAME;
-
-	/**
-	 * The number of structural features of the '<em>Text</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT_FEATURE_COUNT = NODE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Text</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
+	int NODE_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link xml_model.model_xml.impl.CommentImpl <em>Comment</em>}' class.
@@ -294,16 +220,7 @@ public interface Model_xmlPackage extends EPackage {
 	 * @see xml_model.model_xml.impl.Model_xmlPackageImpl#getComment()
 	 * @generated
 	 */
-	int COMMENT = 5;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMENT__NAME = NODE__NAME;
+	int COMMENT = 3;
 
 	/**
 	 * The number of structural features of the '<em>Comment</em>' class.
@@ -312,7 +229,7 @@ public interface Model_xmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENT_FEATURE_COUNT = NODE_FEATURE_COUNT + 0;
+	int COMMENT_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of operations of the '<em>Comment</em>' class.
@@ -321,7 +238,7 @@ public interface Model_xmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENT_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
+	int COMMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link xml_model.model_xml.impl.AttributeImpl <em>Attribute</em>}' class.
@@ -331,7 +248,7 @@ public interface Model_xmlPackage extends EPackage {
 	 * @see xml_model.model_xml.impl.Model_xmlPackageImpl#getAttribute()
 	 * @generated
 	 */
-	int ATTRIBUTE = 6;
+	int ATTRIBUTE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -340,7 +257,7 @@ public interface Model_xmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__NAME = NODE__NAME;
+	int ATTRIBUTE__NAME = ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -349,7 +266,7 @@ public interface Model_xmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__VALUE = NODE_FEATURE_COUNT + 0;
+	int ATTRIBUTE__VALUE = ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
@@ -358,7 +275,7 @@ public interface Model_xmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_FEATURE_COUNT = NODE_FEATURE_COUNT + 1;
+	int ATTRIBUTE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Attribute</em>' class.
@@ -367,44 +284,44 @@ public interface Model_xmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
+	int ATTRIBUTE_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link xml_model.model_xml.impl.CDataSectionImpl <em>CData Section</em>}' class.
+	 * The meta object id for the '{@link xml_model.model_xml.impl.ValueImpl <em>Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see xml_model.model_xml.impl.CDataSectionImpl
-	 * @see xml_model.model_xml.impl.Model_xmlPackageImpl#getCDataSection()
+	 * @see xml_model.model_xml.impl.ValueImpl
+	 * @see xml_model.model_xml.impl.Model_xmlPackageImpl#getValue()
 	 * @generated
 	 */
-	int CDATA_SECTION = 7;
+	int VALUE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CDATA_SECTION__NAME = TEXT__NAME;
-
-	/**
-	 * The number of structural features of the '<em>CData Section</em>' class.
+	 * The feature id for the '<em><b>Payload</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CDATA_SECTION_FEATURE_COUNT = TEXT_FEATURE_COUNT + 0;
+	int VALUE__PAYLOAD = 0;
 
 	/**
-	 * The number of operations of the '<em>CData Section</em>' class.
+	 * The number of structural features of the '<em>Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CDATA_SECTION_OPERATION_COUNT = TEXT_OPERATION_COUNT + 0;
+	int VALUE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link xml_model.model_xml.XML_Model <em>XML Model</em>}'.
@@ -417,26 +334,15 @@ public interface Model_xmlPackage extends EPackage {
 	EClass getXML_Model();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link xml_model.model_xml.XML_Model#getNode <em>Node</em>}'.
+	 * Returns the meta object for the containment reference '{@link xml_model.model_xml.XML_Model#getRoot <em>Root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Node</em>'.
-	 * @see xml_model.model_xml.XML_Model#getNode()
+	 * @return the meta object for the containment reference '<em>Root</em>'.
+	 * @see xml_model.model_xml.XML_Model#getRoot()
 	 * @see #getXML_Model()
 	 * @generated
 	 */
-	EReference getXML_Model_Node();
-
-	/**
-	 * Returns the meta object for the reference '{@link xml_model.model_xml.XML_Model#getVersion <em>Version</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Version</em>'.
-	 * @see xml_model.model_xml.XML_Model#getVersion()
-	 * @see #getXML_Model()
-	 * @generated
-	 */
-	EReference getXML_Model_Version();
+	EReference getXML_Model_Root();
 
 	/**
 	 * Returns the meta object for the attribute '{@link xml_model.model_xml.XML_Model#getHeader <em>Header</em>}'.
@@ -450,16 +356,6 @@ public interface Model_xmlPackage extends EPackage {
 	EAttribute getXML_Model_Header();
 
 	/**
-	 * Returns the meta object for class '{@link xml_model.model_xml.Header <em>Header</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Header</em>'.
-	 * @see xml_model.model_xml.Header
-	 * @generated
-	 */
-	EClass getHeader();
-
-	/**
 	 * Returns the meta object for class '{@link xml_model.model_xml.Node <em>Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -470,15 +366,48 @@ public interface Model_xmlPackage extends EPackage {
 	EClass getNode();
 
 	/**
-	 * Returns the meta object for the attribute '{@link xml_model.model_xml.Node#getName <em>Name</em>}'.
+	 * Returns the meta object for the containment reference list '{@link xml_model.model_xml.Node#getChildren <em>Children</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see xml_model.model_xml.Node#getName()
+	 * @return the meta object for the containment reference list '<em>Children</em>'.
+	 * @see xml_model.model_xml.Node#getChildren()
 	 * @see #getNode()
 	 * @generated
 	 */
-	EAttribute getNode_Name();
+	EReference getNode_Children();
+
+	/**
+	 * Returns the meta object for the reference list '{@link xml_model.model_xml.Node#getCrossref <em>Crossref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Crossref</em>'.
+	 * @see xml_model.model_xml.Node#getCrossref()
+	 * @see #getNode()
+	 * @generated
+	 */
+	EReference getNode_Crossref();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link xml_model.model_xml.Node#getAttributes <em>Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Attributes</em>'.
+	 * @see xml_model.model_xml.Node#getAttributes()
+	 * @see #getNode()
+	 * @generated
+	 */
+	EReference getNode_Attributes();
+
+	/**
+	 * Returns the meta object for the reference '{@link xml_model.model_xml.Node#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @see xml_model.model_xml.Node#getValue()
+	 * @see #getNode()
+	 * @generated
+	 */
+	EReference getNode_Value();
 
 	/**
 	 * Returns the meta object for class '{@link xml_model.model_xml.Element <em>Element</em>}'.
@@ -491,58 +420,15 @@ public interface Model_xmlPackage extends EPackage {
 	EClass getElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link xml_model.model_xml.Element#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link xml_model.model_xml.Element#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see xml_model.model_xml.Element#getValue()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see xml_model.model_xml.Element#getName()
 	 * @see #getElement()
 	 * @generated
 	 */
-	EAttribute getElement_Value();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link xml_model.model_xml.Element#getChildren <em>Children</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Children</em>'.
-	 * @see xml_model.model_xml.Element#getChildren()
-	 * @see #getElement()
-	 * @generated
-	 */
-	EReference getElement_Children();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link xml_model.model_xml.Element#getAttributes <em>Attributes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Attributes</em>'.
-	 * @see xml_model.model_xml.Element#getAttributes()
-	 * @see #getElement()
-	 * @generated
-	 */
-	EReference getElement_Attributes();
-
-	/**
-	 * Returns the meta object for the attribute '{@link xml_model.model_xml.Element#isRoot <em>Root</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Root</em>'.
-	 * @see xml_model.model_xml.Element#isRoot()
-	 * @see #getElement()
-	 * @generated
-	 */
-	EAttribute getElement_Root();
-
-	/**
-	 * Returns the meta object for class '{@link xml_model.model_xml.Text <em>Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Text</em>'.
-	 * @see xml_model.model_xml.Text
-	 * @generated
-	 */
-	EClass getText();
+	EAttribute getElement_Name();
 
 	/**
 	 * Returns the meta object for class '{@link xml_model.model_xml.Comment <em>Comment</em>}'.
@@ -576,14 +462,25 @@ public interface Model_xmlPackage extends EPackage {
 	EAttribute getAttribute_Value();
 
 	/**
-	 * Returns the meta object for class '{@link xml_model.model_xml.CDataSection <em>CData Section</em>}'.
+	 * Returns the meta object for class '{@link xml_model.model_xml.Value <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>CData Section</em>'.
-	 * @see xml_model.model_xml.CDataSection
+	 * @return the meta object for class '<em>Value</em>'.
+	 * @see xml_model.model_xml.Value
 	 * @generated
 	 */
-	EClass getCDataSection();
+	EClass getValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link xml_model.model_xml.Value#getPayload <em>Payload</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Payload</em>'.
+	 * @see xml_model.model_xml.Value#getPayload()
+	 * @see #getValue()
+	 * @generated
+	 */
+	EAttribute getValue_Payload();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -619,20 +516,12 @@ public interface Model_xmlPackage extends EPackage {
 		EClass XML_MODEL = eINSTANCE.getXML_Model();
 
 		/**
-		 * The meta object literal for the '<em><b>Node</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Root</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference XML_MODEL__NODE = eINSTANCE.getXML_Model_Node();
-
-		/**
-		 * The meta object literal for the '<em><b>Version</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference XML_MODEL__VERSION = eINSTANCE.getXML_Model_Version();
+		EReference XML_MODEL__ROOT = eINSTANCE.getXML_Model_Root();
 
 		/**
 		 * The meta object literal for the '<em><b>Header</b></em>' attribute feature.
@@ -641,16 +530,6 @@ public interface Model_xmlPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute XML_MODEL__HEADER = eINSTANCE.getXML_Model_Header();
-
-		/**
-		 * The meta object literal for the '{@link xml_model.model_xml.impl.HeaderImpl <em>Header</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see xml_model.model_xml.impl.HeaderImpl
-		 * @see xml_model.model_xml.impl.Model_xmlPackageImpl#getHeader()
-		 * @generated
-		 */
-		EClass HEADER = eINSTANCE.getHeader();
 
 		/**
 		 * The meta object literal for the '{@link xml_model.model_xml.impl.NodeImpl <em>Node</em>}' class.
@@ -663,12 +542,36 @@ public interface Model_xmlPackage extends EPackage {
 		EClass NODE = eINSTANCE.getNode();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Children</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute NODE__NAME = eINSTANCE.getNode_Name();
+		EReference NODE__CHILDREN = eINSTANCE.getNode_Children();
+
+		/**
+		 * The meta object literal for the '<em><b>Crossref</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NODE__CROSSREF = eINSTANCE.getNode_Crossref();
+
+		/**
+		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NODE__ATTRIBUTES = eINSTANCE.getNode_Attributes();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NODE__VALUE = eINSTANCE.getNode_Value();
 
 		/**
 		 * The meta object literal for the '{@link xml_model.model_xml.impl.ElementImpl <em>Element</em>}' class.
@@ -681,46 +584,12 @@ public interface Model_xmlPackage extends EPackage {
 		EClass ELEMENT = eINSTANCE.getElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ELEMENT__VALUE = eINSTANCE.getElement_Value();
-
-		/**
-		 * The meta object literal for the '<em><b>Children</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ELEMENT__CHILDREN = eINSTANCE.getElement_Children();
-
-		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ELEMENT__ATTRIBUTES = eINSTANCE.getElement_Attributes();
-
-		/**
-		 * The meta object literal for the '<em><b>Root</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ELEMENT__ROOT = eINSTANCE.getElement_Root();
-
-		/**
-		 * The meta object literal for the '{@link xml_model.model_xml.impl.TextImpl <em>Text</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see xml_model.model_xml.impl.TextImpl
-		 * @see xml_model.model_xml.impl.Model_xmlPackageImpl#getText()
-		 * @generated
-		 */
-		EClass TEXT = eINSTANCE.getText();
+		EAttribute ELEMENT__NAME = eINSTANCE.getElement_Name();
 
 		/**
 		 * The meta object literal for the '{@link xml_model.model_xml.impl.CommentImpl <em>Comment</em>}' class.
@@ -751,14 +620,22 @@ public interface Model_xmlPackage extends EPackage {
 		EAttribute ATTRIBUTE__VALUE = eINSTANCE.getAttribute_Value();
 
 		/**
-		 * The meta object literal for the '{@link xml_model.model_xml.impl.CDataSectionImpl <em>CData Section</em>}' class.
+		 * The meta object literal for the '{@link xml_model.model_xml.impl.ValueImpl <em>Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see xml_model.model_xml.impl.CDataSectionImpl
-		 * @see xml_model.model_xml.impl.Model_xmlPackageImpl#getCDataSection()
+		 * @see xml_model.model_xml.impl.ValueImpl
+		 * @see xml_model.model_xml.impl.Model_xmlPackageImpl#getValue()
 		 * @generated
 		 */
-		EClass CDATA_SECTION = eINSTANCE.getCDataSection();
+		EClass VALUE = eINSTANCE.getValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Payload</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VALUE__PAYLOAD = eINSTANCE.getValue_Payload();
 
 	}
 

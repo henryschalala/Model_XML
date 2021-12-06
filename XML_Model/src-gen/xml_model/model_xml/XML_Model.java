@@ -13,8 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link xml_model.model_xml.XML_Model#getNode <em>Node</em>}</li>
- *   <li>{@link xml_model.model_xml.XML_Model#getVersion <em>Version</em>}</li>
+ *   <li>{@link xml_model.model_xml.XML_Model#getRoot <em>Root</em>}</li>
  *   <li>{@link xml_model.model_xml.XML_Model#getHeader <em>Header</em>}</li>
  * </ul>
  *
@@ -24,48 +23,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface XML_Model extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Node</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Root</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Node</em>' containment reference.
-	 * @see #setNode(Node)
-	 * @see xml_model.model_xml.Model_xmlPackage#getXML_Model_Node()
+	 * @return the value of the '<em>Root</em>' containment reference.
+	 * @see #setRoot(Node)
+	 * @see xml_model.model_xml.Model_xmlPackage#getXML_Model_Root()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Node getNode();
+	Node getRoot();
 
 	/**
-	 * Sets the value of the '{@link xml_model.model_xml.XML_Model#getNode <em>Node</em>}' containment reference.
+	 * Sets the value of the '{@link xml_model.model_xml.XML_Model#getRoot <em>Root</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Node</em>' containment reference.
-	 * @see #getNode()
+	 * @param value the new value of the '<em>Root</em>' containment reference.
+	 * @see #getRoot()
 	 * @generated
 	 */
-	void setNode(Node value);
-
-	/**
-	 * Returns the value of the '<em><b>Version</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Version</em>' reference.
-	 * @see #setVersion(Header)
-	 * @see xml_model.model_xml.Model_xmlPackage#getXML_Model_Version()
-	 * @model
-	 * @generated
-	 */
-	Header getVersion();
-
-	/**
-	 * Sets the value of the '{@link xml_model.model_xml.XML_Model#getVersion <em>Version</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Version</em>' reference.
-	 * @see #getVersion()
-	 * @generated
-	 */
-	void setVersion(Header value);
+	void setRoot(Node value);
 
 	/**
 	 * Returns the value of the '<em><b>Header</b></em>' attribute.

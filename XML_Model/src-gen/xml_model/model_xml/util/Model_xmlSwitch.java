@@ -73,16 +73,11 @@ public class Model_xmlSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case Model_xmlPackage.HEADER: {
-			Header header = (Header) theEObject;
-			T result = caseHeader(header);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case Model_xmlPackage.NODE: {
 			Node node = (Node) theEObject;
 			T result = caseNode(node);
+			if (result == null)
+				result = caseElement(node);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -91,25 +86,12 @@ public class Model_xmlSwitch<T> extends Switch<T> {
 			Element element = (Element) theEObject;
 			T result = caseElement(element);
 			if (result == null)
-				result = caseNode(element);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case Model_xmlPackage.TEXT: {
-			Text text = (Text) theEObject;
-			T result = caseText(text);
-			if (result == null)
-				result = caseNode(text);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case Model_xmlPackage.COMMENT: {
 			Comment comment = (Comment) theEObject;
 			T result = caseComment(comment);
-			if (result == null)
-				result = caseNode(comment);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -118,18 +100,14 @@ public class Model_xmlSwitch<T> extends Switch<T> {
 			Attribute attribute = (Attribute) theEObject;
 			T result = caseAttribute(attribute);
 			if (result == null)
-				result = caseNode(attribute);
+				result = caseElement(attribute);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case Model_xmlPackage.CDATA_SECTION: {
-			CDataSection cDataSection = (CDataSection) theEObject;
-			T result = caseCDataSection(cDataSection);
-			if (result == null)
-				result = caseText(cDataSection);
-			if (result == null)
-				result = caseNode(cDataSection);
+		case Model_xmlPackage.VALUE: {
+			Value value = (Value) theEObject;
+			T result = caseValue(value);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -151,21 +129,6 @@ public class Model_xmlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseXML_Model(XML_Model object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Header</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Header</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseHeader(Header object) {
 		return null;
 	}
 
@@ -200,21 +163,6 @@ public class Model_xmlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Text</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Text</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseText(Text object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Comment</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -245,17 +193,17 @@ public class Model_xmlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>CData Section</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Value</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>CData Section</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Value</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCDataSection(CDataSection object) {
+	public T caseValue(Value object) {
 		return null;
 	}
 

@@ -4,6 +4,12 @@
  */
 package xml_model.model_xml.validation;
 
+import org.eclipse.emf.common.util.EList;
+
+import xml_model.model_xml.Attribute;
+import xml_model.model_xml.Node;
+import xml_model.model_xml.Value;
+
 /**
  * A sample validator interface for {@link xml_model.model_xml.Node}.
  * This doesn't really do anything, and it's not a real EMF artifact.
@@ -13,5 +19,11 @@ package xml_model.model_xml.validation;
 public interface NodeValidator {
 	boolean validate();
 
-	boolean validateName(String value);
+	boolean validateChildren(EList<Node> value);
+
+	boolean validateCrossref(EList<Node> value);
+
+	boolean validateAttributes(EList<Attribute> value);
+
+	boolean validateValue(Value value);
 }

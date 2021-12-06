@@ -72,11 +72,6 @@ public class Model_xmlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseHeader(Header object) {
-			return createHeaderAdapter();
-		}
-
-		@Override
 		public Adapter caseNode(Node object) {
 			return createNodeAdapter();
 		}
@@ -84,11 +79,6 @@ public class Model_xmlAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseElement(Element object) {
 			return createElementAdapter();
-		}
-
-		@Override
-		public Adapter caseText(Text object) {
-			return createTextAdapter();
 		}
 
 		@Override
@@ -102,8 +92,8 @@ public class Model_xmlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseCDataSection(CDataSection object) {
-			return createCDataSectionAdapter();
+		public Adapter caseValue(Value object) {
+			return createValueAdapter();
 		}
 
 		@Override
@@ -140,20 +130,6 @@ public class Model_xmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link xml_model.model_xml.Header <em>Header</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see xml_model.model_xml.Header
-	 * @generated
-	 */
-	public Adapter createHeaderAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link xml_model.model_xml.Node <em>Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -178,20 +154,6 @@ public class Model_xmlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link xml_model.model_xml.Text <em>Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see xml_model.model_xml.Text
-	 * @generated
-	 */
-	public Adapter createTextAdapter() {
 		return null;
 	}
 
@@ -224,16 +186,16 @@ public class Model_xmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link xml_model.model_xml.CDataSection <em>CData Section</em>}'.
+	 * Creates a new adapter for an object of class '{@link xml_model.model_xml.Value <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see xml_model.model_xml.CDataSection
+	 * @see xml_model.model_xml.Value
 	 * @generated
 	 */
-	public Adapter createCDataSectionAdapter() {
+	public Adapter createValueAdapter() {
 		return null;
 	}
 

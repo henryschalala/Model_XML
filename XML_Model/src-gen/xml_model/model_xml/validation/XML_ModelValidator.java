@@ -4,7 +4,6 @@
  */
 package xml_model.model_xml.validation;
 
-import xml_model.model_xml.Header;
 import xml_model.model_xml.Node;
 
 /**
@@ -16,10 +15,7 @@ import xml_model.model_xml.Node;
 public interface XML_ModelValidator {
 	boolean validate();
 
-	boolean validateNode(Node value);
-
-	boolean validateVersion(Header value);
+	boolean validateRoot(Node value);
 
 	boolean validateHeader(String value);
-
 }

@@ -31,7 +31,7 @@ public class Parser {
 
 		Document document = null;
 
-		File myObj = new File("sample_CustomersOrders.xml");
+		File myObj = new File("opcua_ex.xml");
 		
 		try {
 			document = saxBuilder.build(myObj);

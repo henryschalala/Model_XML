@@ -9,49 +9,49 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import xml_model.model_xml.Element;
 import xml_model.model_xml.Model_xmlPackage;
+import xml_model.model_xml.Value;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Element</b></em>'.
+ * An implementation of the model object '<em><b>Value</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link xml_model.model_xml.impl.ElementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link xml_model.model_xml.impl.ValueImpl#getPayload <em>Payload</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ElementImpl extends MinimalEObjectImpl.Container implements Element {
+public class ValueImpl extends MinimalEObjectImpl.Container implements Value {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getPayload() <em>Payload</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getPayload()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String PAYLOAD_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getPayload() <em>Payload</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getPayload()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String payload = PAYLOAD_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ElementImpl() {
+	protected ValueImpl() {
 		super();
 	}
 
@@ -62,7 +62,7 @@ public class ElementImpl extends MinimalEObjectImpl.Container implements Element
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Model_xmlPackage.Literals.ELEMENT;
+		return Model_xmlPackage.Literals.VALUE;
 	}
 
 	/**
@@ -70,8 +70,8 @@ public class ElementImpl extends MinimalEObjectImpl.Container implements Element
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public String getPayload() {
+		return payload;
 	}
 
 	/**
@@ -79,11 +79,12 @@ public class ElementImpl extends MinimalEObjectImpl.Container implements Element
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setPayload(String newPayload) {
+		String oldPayload = payload;
+		payload = newPayload;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Model_xmlPackage.ELEMENT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, Model_xmlPackage.VALUE__PAYLOAD, oldPayload,
+					payload));
 	}
 
 	/**
@@ -94,8 +95,8 @@ public class ElementImpl extends MinimalEObjectImpl.Container implements Element
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Model_xmlPackage.ELEMENT__NAME:
-			return getName();
+		case Model_xmlPackage.VALUE__PAYLOAD:
+			return getPayload();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -108,8 +109,8 @@ public class ElementImpl extends MinimalEObjectImpl.Container implements Element
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Model_xmlPackage.ELEMENT__NAME:
-			setName((String) newValue);
+		case Model_xmlPackage.VALUE__PAYLOAD:
+			setPayload((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -123,8 +124,8 @@ public class ElementImpl extends MinimalEObjectImpl.Container implements Element
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Model_xmlPackage.ELEMENT__NAME:
-			setName(NAME_EDEFAULT);
+		case Model_xmlPackage.VALUE__PAYLOAD:
+			setPayload(PAYLOAD_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -138,8 +139,8 @@ public class ElementImpl extends MinimalEObjectImpl.Container implements Element
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Model_xmlPackage.ELEMENT__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case Model_xmlPackage.VALUE__PAYLOAD:
+			return PAYLOAD_EDEFAULT == null ? payload != null : !PAYLOAD_EDEFAULT.equals(payload);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -155,10 +156,10 @@ public class ElementImpl extends MinimalEObjectImpl.Container implements Element
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (payload: ");
+		result.append(payload);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ElementImpl
+} //ValueImpl

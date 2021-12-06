@@ -31,15 +31,6 @@ public interface Model_xmlFactory extends EFactory {
 	XML_Model createXML_Model();
 
 	/**
-	 * Returns a new object of class '<em>Header</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Header</em>'.
-	 * @generated
-	 */
-	Header createHeader();
-
-	/**
 	 * Returns a new object of class '<em>Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -56,15 +47,6 @@ public interface Model_xmlFactory extends EFactory {
 	 * @generated
 	 */
 	Element createElement();
-
-	/**
-	 * Returns a new object of class '<em>Text</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Text</em>'.
-	 * @generated
-	 */
-	Text createText();
 
 	/**
 	 * Returns a new object of class '<em>Comment</em>'.
@@ -85,13 +67,13 @@ public interface Model_xmlFactory extends EFactory {
 	Attribute createAttribute();
 
 	/**
-	 * Returns a new object of class '<em>CData Section</em>'.
+	 * Returns a new object of class '<em>Value</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>CData Section</em>'.
+	 * @return a new object of class '<em>Value</em>'.
 	 * @generated
 	 */
-	CDataSection createCDataSection();
+	Value createValue();
 
 	/**
 	 * Returns the package supported by this factory.

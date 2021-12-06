@@ -10,14 +10,12 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import xml_model.model_xml.Attribute;
-import xml_model.model_xml.CDataSection;
 import xml_model.model_xml.Comment;
 import xml_model.model_xml.Element;
-import xml_model.model_xml.Header;
 import xml_model.model_xml.Model_xmlFactory;
 import xml_model.model_xml.Model_xmlPackage;
 import xml_model.model_xml.Node;
-import xml_model.model_xml.Text;
+import xml_model.model_xml.Value;
 import xml_model.model_xml.XML_Model;
 
 /**
@@ -39,13 +37,6 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass headerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass nodeEClass = null;
 
 	/**
@@ -54,13 +45,6 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 	 * @generated
 	 */
 	private EClass elementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass textEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,7 +65,7 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass cDataSectionEClass = null;
+	private EClass valueEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -161,7 +145,7 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getXML_Model_Node() {
+	public EReference getXML_Model_Root() {
 		return (EReference) xmL_ModelEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -170,26 +154,8 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getXML_Model_Version() {
-		return (EReference) xmL_ModelEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getXML_Model_Header() {
-		return (EAttribute) xmL_ModelEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getHeader() {
-		return headerEClass;
+		return (EAttribute) xmL_ModelEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -206,8 +172,35 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNode_Name() {
-		return (EAttribute) nodeEClass.getEStructuralFeatures().get(0);
+	public EReference getNode_Children() {
+		return (EReference) nodeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getNode_Crossref() {
+		return (EReference) nodeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getNode_Attributes() {
+		return (EReference) nodeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getNode_Value() {
+		return (EReference) nodeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -224,44 +217,8 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getElement_Value() {
+	public EAttribute getElement_Name() {
 		return (EAttribute) elementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getElement_Children() {
-		return (EReference) elementEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getElement_Attributes() {
-		return (EReference) elementEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getElement_Root() {
-		return (EAttribute) elementEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getText() {
-		return textEClass;
 	}
 
 	/**
@@ -296,8 +253,17 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCDataSection() {
-		return cDataSectionEClass;
+	public EClass getValue() {
+		return valueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getValue_Payload() {
+		return (EAttribute) valueEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -330,29 +296,25 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 
 		// Create classes and their features
 		xmL_ModelEClass = createEClass(XML_MODEL);
-		createEReference(xmL_ModelEClass, XML_MODEL__NODE);
-		createEReference(xmL_ModelEClass, XML_MODEL__VERSION);
+		createEReference(xmL_ModelEClass, XML_MODEL__ROOT);
 		createEAttribute(xmL_ModelEClass, XML_MODEL__HEADER);
 
-		headerEClass = createEClass(HEADER);
-
 		nodeEClass = createEClass(NODE);
-		createEAttribute(nodeEClass, NODE__NAME);
+		createEReference(nodeEClass, NODE__CHILDREN);
+		createEReference(nodeEClass, NODE__CROSSREF);
+		createEReference(nodeEClass, NODE__ATTRIBUTES);
+		createEReference(nodeEClass, NODE__VALUE);
 
 		elementEClass = createEClass(ELEMENT);
-		createEAttribute(elementEClass, ELEMENT__VALUE);
-		createEReference(elementEClass, ELEMENT__CHILDREN);
-		createEReference(elementEClass, ELEMENT__ATTRIBUTES);
-		createEAttribute(elementEClass, ELEMENT__ROOT);
-
-		textEClass = createEClass(TEXT);
+		createEAttribute(elementEClass, ELEMENT__NAME);
 
 		commentEClass = createEClass(COMMENT);
 
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEAttribute(attributeEClass, ATTRIBUTE__VALUE);
 
-		cDataSectionEClass = createEClass(CDATA_SECTION);
+		valueEClass = createEClass(VALUE);
+		createEAttribute(valueEClass, VALUE__PAYLOAD);
 	}
 
 	/**
@@ -384,43 +346,35 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		elementEClass.getESuperTypes().add(this.getNode());
-		textEClass.getESuperTypes().add(this.getNode());
-		commentEClass.getESuperTypes().add(this.getNode());
-		attributeEClass.getESuperTypes().add(this.getNode());
-		cDataSectionEClass.getESuperTypes().add(this.getText());
+		nodeEClass.getESuperTypes().add(this.getElement());
+		attributeEClass.getESuperTypes().add(this.getElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(xmL_ModelEClass, XML_Model.class, "XML_Model", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getXML_Model_Node(), this.getNode(), null, "node", null, 0, 1, XML_Model.class, !IS_TRANSIENT,
+		initEReference(getXML_Model_Root(), this.getNode(), null, "root", null, 0, 1, XML_Model.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getXML_Model_Version(), this.getHeader(), null, "version", null, 0, 1, XML_Model.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getXML_Model_Header(), ecorePackage.getEString(), "header", null, 0, 1, XML_Model.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(headerEClass, Header.class, "Header", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNode_Name(), ecorePackage.getEString(), "name", null, 0, 1, Node.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNode_Children(), this.getNode(), null, "children", null, 0, -1, Node.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getNode_Crossref(), this.getNode(), null, "crossref", null, 0, -1, Node.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getNode_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Node.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNode_Value(), this.getValue(), null, "value", null, 0, 1, Node.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getElement_Value(), ecorePackage.getEString(), "value", null, 0, 1, Element.class, !IS_TRANSIENT,
+		initEAttribute(getElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Element.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getElement_Children(), this.getNode(), null, "children", null, 0, -1, Element.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getElement_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Element.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getElement_Root(), ecorePackage.getEBoolean(), "root", "false", 0, 1, Element.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -429,8 +383,9 @@ public class Model_xmlPackageImpl extends EPackageImpl implements Model_xmlPacka
 		initEAttribute(getAttribute_Value(), ecorePackage.getEString(), "value", null, 0, 1, Attribute.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(cDataSectionEClass, CDataSection.class, "CDataSection", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
+		initEClass(valueEClass, Value.class, "Value", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getValue_Payload(), ecorePackage.getEString(), "payload", null, 0, 1, Value.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
