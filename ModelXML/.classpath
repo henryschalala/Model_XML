@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-14">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src-gen"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="src/jaxen-1.1.6.jar"/>
+	<classpathentry kind="lib" path="src/jdom-2.0.6.jar"/>
+	<classpathentry kind="lib" path="src/jdom-2.0.6-contrib.jar"/>
+	<classpathentry kind="lib" path="src/jdom-2.0.6-javadoc.jar"/>
+	<classpathentry kind="lib" path="src/jdom-2.0.6-junit.jar"/>
+	<classpathentry kind="lib" path="src/jdom-2.0.6-sources.jar"/>
+	<classpathentry kind="lib" path="src/serializer-2.7.2.jar"/>
+	<classpathentry kind="lib" path="src/xalan-2.7.2.jar"/>
+	<classpathentry kind="lib" path="src/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="src/xml-apis.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

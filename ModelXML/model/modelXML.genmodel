@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/ModelXML/src-gen" creationIcons="false" editDirectory="/ModelXML.edit/src-gen"
+    editorDirectory="/ModelXML.editor/src-gen" modelPluginID="ModelXML" modelName="ModelXML"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>modelXML.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="ModelXML" disposableProviderFactory="true" ecorePackage="modelXML.ecore#/">
+    <genClasses ecoreClass="modelXML.ecore#//Value">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelXML.ecore#//Value/text"/>
+    </genClasses>
+    <genClasses ecoreClass="modelXML.ecore#//XMLModel">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference modelXML.ecore#//XMLModel/root"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelXML.ecore#//XMLModel/header"/>
+    </genClasses>
+    <genClasses ecoreClass="modelXML.ecore#//Node">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference modelXML.ecore#//Node/attributes"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference modelXML.ecore#//Node/children"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference modelXML.ecore#//Node/crossref"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference modelXML.ecore#//Node/value"/>
+    </genClasses>
+    <genClasses ecoreClass="modelXML.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelXML.ecore#//Attribute/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelXML.ecore#//Attribute/id"/>
+    </genClasses>
+    <genClasses ecoreClass="modelXML.ecore#//Element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelXML.ecore#//Element/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<modelXML:XMLModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelXML="http://www.example.org/modelXML">
+  <root name="note">
+    <attributes name="category" value="important"/>
+    <attributes name="gender" value="female"/>
+    <children name="to">
+      <value text="Tove"/>
+    </children>
+    <children name="from">
+      <value text="Jani"/>
+    </children>
+    <children name="heading">
+      <value text="Reminder"/>
+    </children>
+    <children name="body">
+      <value text="Don't forget me this weekend!"/>
+    </children>
+  </root>
+</modelXML:XMLModel>
