@@ -1,0 +1,28 @@
+import "http://www.eclipse.org/emf/2002/Ecore"
+import "platform:/resource/ModelXML/model/modelXML.ecore"
+
+rule connectNodes() {
+	parent : Node {
+		++ -crossref -> child
+	}
+	child : Node
+	
+} when notConnected
+
+condition notConnected = forbid connected
+
+pattern connected() {
+	parent : Node {
+		-attributes -> id
+	}
+	id : Attribute 
+	# id.name == "id"
+	
+	child : Node {
+		-attributes -> ref
+	}
+	ref : Attribute 
+	# ref.name == "ref"
+	
+	# id.value == ref.value
+}
