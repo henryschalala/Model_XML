@@ -38,7 +38,7 @@ public interface ModelXMLPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.example.org/modelXML";
+	String eNS_URI = "platform:/resource/ModelXML/model/modelXML.ecore";
 
 	/**
 	 * The package namespace name.

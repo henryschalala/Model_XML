@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated modelXML -->
       <package
-            uri="http://www.example.org/modelXML"
+            uri="platform:/resource/ModelXML/model/modelXML.ecore"
             class="modelXML.ModelXMLPackage"
             genModel="model/modelXML.genmodel"/>
    </extension>

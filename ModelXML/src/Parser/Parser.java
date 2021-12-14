@@ -1,23 +1,13 @@
 package Parser;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.List;
-import org.apache.commons.io.FileUtils;
+import java.io.*;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.jdom2.Document;
-import org.jdom2.Element;
-import org.jdom2.JDOMException;
+import org.jdom2.*;
 import org.jdom2.input.SAXBuilder;
 
 import modelXML.ModelXMLFactory;
@@ -26,16 +16,15 @@ import modelXML.XMLModel;
 
 public class Parser {
 
-	public static XMLModel parseXMLFile() {
-
-		SAXBuilder saxBuilder = new SAXBuilder();
-
+	public static XMLModel parseXMLFile(String fileName) {
+		var end = fileName.lastIndexOf(".");
+		var fileNameWoEnd = fileName.substring(0, end);
+		
+		File file = new File(fileName);
 		Document document = null;
 
-		File file = new File("misc/xample.xml");
-
 		try {
-			document = saxBuilder.build(file);
+			document = new SAXBuilder().build(file);
 		} catch (JDOMException | IOException e1) {
 			e1.printStackTrace();
 		}
@@ -45,7 +34,7 @@ public class Parser {
 		// Setup RessourceSet
 		ResourceSet rs = new ResourceSetImpl();
 		rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
-		Resource r = rs.createResource(URI.createURI("modelTest.xmi"));
+		Resource r = rs.createResource(URI.createURI(fileNameWoEnd+"Test.xmi"));
 
 //		Generate XML Model
 		modelXML.XMLModel container = ModelXMLFactory.eINSTANCE.createXMLModel();
@@ -60,14 +49,17 @@ public class Parser {
 		}
 		return container;
 	}
+	
+	public static XMLModel parseXMLFile() {
+		return parseXMLFile("misc/xample.xml");
+	}
 
 	private static void parseHeader(File file, modelXML.XMLModel container) {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(file));
 			String header = br.readLine();
-			if (header.charAt(1) != '?')
-				return ;
-			container.setHeader(header);
+			if (header.charAt(1) == '?')
+				container.setHeader(header);
 			br.close();
 		} catch (FileNotFoundException e2) {
 			e2.printStackTrace();
